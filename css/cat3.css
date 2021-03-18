@@ -1,0 +1,582 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: BoonHome;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.header_bar{
+    width:90%;
+    margin:0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display:flex;
+    align-items: center;
+}
+.logo *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav{
+    display:flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-right:5%;
+}
+.logo_image{
+    width:100px;
+    height: 100px;
+}
+.logo_text > h1{
+    display: inline;
+    color:#394e53;
+    font-size: 40px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+    font-family:  Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+}
+.nav_item{
+    list-style: none;
+    font-size: 20px;
+    margin-left: 5%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.nav_item::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #000000;
+    content: "";
+    margin-left: 50%;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.nav_item:nth-child(4):before{
+    width: 100%;
+    margin-left: 0;
+}
+
+.nav_item:hover:before{
+    margin-left: 0;
+    width: 100%;
+}
+
+.nav_item a{
+    text-decoration: none;
+    color: #394e53;
+    font-family: BoonHome;
+}
+
+
+.menu_click{
+    width: 100%;
+    z-index: 10;
+    display: none;
+    justify-content: flex-end;
+}
+/* I hide the checkbox because I only need the label */
+#check{
+    display: none;
+}
+
+.button{
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 192, 203);
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    padding-top: 5px;
+    line-height: 8px;
+    text-align: left;
+    z-index: 10;
+}
+.button:hover{
+    background: rgb(253, 174, 187);
+}
+.button span{
+    height: 3px;
+    width: 100%;
+    background: white;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(.62,.43,.35,1.47);
+}
+
+
+/* toggle icon animation */
+#check:checked ~ .button span:nth-child(1){
+    width: 100%;
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+#check:checked ~ .button span:nth-child(2){
+    width: 0;
+}
+
+#check:checked ~ .button span:nth-child(3){
+    width: 100%;
+    transform: rotate(-45deg) translateY(-7px) translateX(7px);
+}
+
+
+/* the nav height is set to 0 when the navbar is closed */
+
+nav{
+    text-align: left;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    background: #ffffff;
+    height: 0;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+nav a{
+    text-decoration: none;
+    color: #0c1019;
+    display: block;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(.22,.43,.35,1.5);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+    text-align: center;
+    border-bottom: 1px solid #b4ac97;
+    height: 30%;
+    margin-top: 8%;
+}
+
+nav a:hover{
+    background: #ffdd7f;
+}
+
+/* the nav height will be set to the height in pixels that would have for default, using height:auto won't work but you can put that value in pixels creating the slide*/
+#check:checked ~ nav{
+    height: 260px;
+}
+
+#check:checked ~ nav a{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+/* ທາງເທິງແມ່ນພາກສ່ວນຂອງເມນູ */
+
+.header{
+    margin: 30px;
+    background-image: url(../image/f1.JPG);
+   height: 400px;
+   background-size: cover;
+   border-radius: 40px;
+   -webkit-border-radius: 40px;
+   -moz-border-radius: 40px;
+   -ms-border-radius: 40px;
+   -o-border-radius: 40px;
+   display: flex;
+   justify-content: flex-end;
+   box-shadow: 0px 0px 10px 16px rgba(0, 0, 0, 0.06);
+}
+.head_side_right {
+   width: 35%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.head_side_right *{
+    font-family: BoonHome;
+    margin:10px 0;
+}
+.title_head{
+    font-size: 40px;
+}
+.info_head{
+    width: 80%;
+    font-size: 18px;
+}
+.btn_head{
+    width:95px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    color: #ffff;
+    background-color: pink;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.btn_head:hover{
+    background-color: rgb(230, 97, 119);
+}
+
+/* ທາງເທິງແມ່ນພາກສ່ອນຂອງຫົວ */
+
+.content_aside{
+    margin: 0 auto;
+    width: 95%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 5px solid #dfeaff;
+    border-radius: 50px;
+    background-color: #ffffff;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.aside_item{
+    text-decoration:none;
+    color:#394e53;
+    font-size: 15px;
+    position:relative;
+}
+.aside_item:before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #666666;
+    content: "";
+    margin-left: 50%;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.aside_item:hover:before{
+    margin-left: 0;
+    width: 100%;
+}
+
+/* ທາງເທິງແມ່ນແທປສະແດງຍອດນິຍົມ */
+
+.content_section{
+    width: 95%;
+    margin: 0 auto;
+}
+.content_section_container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.section_item{
+    width: 30%;
+    height: 350px;
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top:0;
+    left: 0;
+    padding: 15% 30px;
+    background-color: #ffffff;
+    border-radius:25px;
+    -webkit-border-radius:25px;
+    -moz-border-radius:25px;
+    -ms-border-radius:25px;
+    -o-border-radius:25px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    background-image: url(../image/for_grid.JPG);
+    background-size: cover;
+    
+
+}
+.section_item:hover{
+    background-color: #fcfcfc;
+    box-shadow: 0px 0px 10px 16px rgba(0, 0, 0, 0.06);
+    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -ms-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+}
+.title_section{
+    margin-top: 50px;
+    font-size: 28px;
+}
+.grid_bg_1{
+    background-image: url(../image/for_grid.JPG);
+    background-size: cover;
+}
+.grid_bg_2{
+    background-image: url(../image/1.JPG);
+    background-size: cover;
+}
+.grid_bg_3{
+    background-image: url(../image/8.JPG);
+    background-size: cover;
+}
+.grid_bg_4{
+    background-image: url(../image/3.JPG);
+    background-size: cover;
+}
+.grid_bg_5{
+    background-image: url(../image/4.JPG);
+    background-size: cover;
+}
+.grid_bg_6{
+    background-image: url(../image/5.JPG);
+    background-size: cover;
+}
+.grid_bg_7{
+    background-image: url(../image/6.JPG);
+    background-size: cover;
+}
+.grid_bg_8{
+    background-image: url(../image/7.JPG);
+    background-size: cover;
+}
+.grid_bg_9{
+    background-image: url(../image/9.JPG);
+    background-size: cover;
+}
+
+.footer_section{
+    position: absolute;
+    bottom: 20px;
+    right:25px;
+}
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: #3f3c3c;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px 16px rgba(0, 0, 0, 0.06);
+}
+footer *{
+    color: #ffffff;
+    font-size: 15px;
+}
+.typeoffooter{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.container_footer_item li{
+    list-style: none;
+    margin: 5% 0;
+    font-size: 13px;
+}
+.title_footer{
+    font-size: 15px;
+}
+.footer_item{
+    width: 30%;
+}
+.s1{
+    display: flex;
+}
+.footer_s{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1%;
+}
+.cradit{
+    margin: 10px 0;
+    text-align: start;
+    color: #ffff;
+    font-size: 10px;
+    padding-bottom: 5%;
+}
+
+
+.content_section_container:nth-child(3){
+    justify-content: start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cloud_bg_1{
+    position: absolute;
+    top:-150px;
+    left:0;
+    width:50%;
+    z-index: -1;
+}
+.cloud_bg_2{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    height: 400px;
+    width: 100%;
+    z-index: -1;
+}
+
+
+
+.to_top{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 2%;
+    right: 3%;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    animation: anime 1s infinite;
+    -webkit-animation: anime 1s infinite;
+}
+
+
+@keyframes anime{
+    0%{bottom: 2%;}
+    50%{bottom: 3%;}
+    100%{bottom: 2%;}
+}
+
+
+@media only screen and (max-width: 800px){
+    .header_bar{
+        display: flex;
+        justify-content: center;
+    }
+    .logo_image{
+        display: none;
+    }
+    .logo_text{
+        
+    }
+    .nav{
+        display: none;
+    }
+    .menu_click{
+        display: flex;
+        overflow: hidden;
+    }
+
+    .header{
+        height: 290px;
+    }
+    .content_section_container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .section_item{
+        width: 80%;
+        height: 250px;
+        margin: 5% 0;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .header{
+        height: 200px;
+        margin: 10% 0;
+        background-position: 40%;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);
+    }
+    .title_head{
+        font-size: 23px;
+        margin: 0;
+    }
+    .info_head{
+        font-size: 10px;
+        margin: 0;
+    }
+    .section_item{
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);
+    }
+    .title_section{
+        margin-top: 45%;
+        font-size: 25px;
+    }
+
+    .typeoffooter{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    .footer_item{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .title_footer{
+        margin-top: 5%;
+    }
+    .container_footer_item{
+        display: flex;
+        justify-content: space-between;
+    }
+    .container_footer_item li{
+        display: inline;
+    }
+}
